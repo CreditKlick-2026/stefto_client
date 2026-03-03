@@ -1,0 +1,175 @@
+@import "tailwindcss";
+
+@theme {
+  --color-stefto-blue: #003366;
+  --color-stefto-dark: #001F3F;
+  --color-stefto-red: #FF0000;
+
+  --font-roboto: "Roboto", "Open Sans", sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-roboto);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #ffffff;
+  color: #333;
+  overflow-x: hidden;
+}
+
+.gradient-blue {
+  background: linear-gradient(135deg, var(--color-stefto-blue) 0%, var(--color-stefto-dark) 100%);
+}
+
+.text-gradient {
+  background: linear-gradient(to right, var(--color-stefto-blue), var(--color-stefto-red));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-primary {
+  @apply bg-stefto-blue text-white px-6 py-3 rounded-md font-bold transition-all duration-300 hover:bg-stefto-dark border-b-4 border-stefto-red;
+}
+
+.btn-secondary {
+  @apply bg-white text-stefto-blue px-6 py-3 rounded-md font-bold transition-all duration-300 hover:bg-gray-100 border border-stefto-blue;
+}
+
+.section-padding {
+  @apply py-20 px-4 md:px-8 lg:px-16;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #003366;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #001F3F;
+}
+
+/* Animations */
+@keyframes slide-infinite {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 1.5s infinite;
+}
+
+.animate-gradient-flow {
+  animation: gradient-flow 10s ease infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 15s linear infinite;
+}
+
+.animate-slide-infinite {
+  display: flex;
+  width: max-content;
+  animation: slide-infinite 40s linear infinite;
+}
+
+.animate-slide-infinite:hover {
+  animation-play-state: paused;
+}
+
+.animate-slide-infinite-slow {
+  display: flex;
+  width: max-content;
+  animation: slide-infinite 60s linear infinite;
+}
+
+.animate-slide-infinite-slow:hover {
+  animation-play-state: paused;
+}
+
+/* Beyond Work Gallery Marquee */
+@keyframes slide-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-reverse {
+  display: flex;
+  width: max-content;
+  animation: slide-reverse 35s linear infinite;
+}
+
+.animate-slide-reverse:hover {
+  animation-play-state: paused;
+}
+
+.animate-slide-gallery {
+  display: flex;
+  width: max-content;
+  animation: slide-infinite 30s linear infinite;
+}
+
+.animate-slide-gallery:hover {
+  animation-play-state: paused;
+}
