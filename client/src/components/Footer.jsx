@@ -9,9 +9,9 @@ const Footer = () => {
     };
 
     return (
-        <footer className="bg-stefto-dark text-white pt-16 pb-8">
+        <footer className="bg-stefto-dark text-white pt-10 md:pt-16 pb-6 md:pb-8">
             <div className="container mx-auto px-4 md:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 border-b border-gray-700 pb-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 border-b border-gray-700 pb-8 md:pb-12">
                     {/* Brand Info */}
                     <div className="space-y-6">
                         <img src={logo} alt="Stefto Logo" className="h-16 object-contain" />
@@ -27,7 +27,7 @@ const Footer = () => {
 
                     {/* Quick Links */}
                     <div>
-                        <h3 className="text-xl font-bold mb-6 border-l-4 border-stefto-red pl-3">Quick Links</h3>
+                        <h3 className="text-xl font-bold mb-4 md:mb-6 border-l-4 border-stefto-red pl-3">Quick Links</h3>
                         <ul className="space-y-3 text-gray-400">
                             <li><Link to="/about" className="hover:text-white transition-colors">About Stefto</Link></li>
                             <li><Link to="/services" className="hover:text-white transition-colors">Our Services</Link></li>
@@ -39,7 +39,7 @@ const Footer = () => {
 
                     {/* Services */}
                     <div>
-                        <h3 className="text-xl font-bold mb-6 border-l-4 border-stefto-red pl-3">Our Services</h3>
+                        <h3 className="text-xl font-bold mb-4 md:mb-6 border-l-4 border-stefto-red pl-3">Our Services</h3>
                         <ul className="space-y-3 text-gray-400">
                             <li>Debt Collection</li>
                             <li>Risk Data Analytics</li>
@@ -51,7 +51,7 @@ const Footer = () => {
 
                     {/* Contact Info */}
                     <div>
-                        <h3 className="text-xl font-bold mb-6 border-l-4 border-stefto-red pl-3">Get In Touch</h3>
+                        <h3 className="text-xl font-bold mb-4 md:mb-6 border-l-4 border-stefto-red pl-3">Get In Touch</h3>
                         <ul className="space-y-4 text-gray-400 text-sm">
                             <li className="flex items-start gap-3">
                                 <MapPin size={20} className="text-stefto-red flex-shrink-0" />
@@ -69,18 +69,20 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className="mt-4 pt-1 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-gray-500">
-                    <p>© {new Date().getFullYear()} Stefto. All Rights Reserved.</p>
-                    <div className="flex flex-wrap justify-center md:justify-end items-center gap-6">
+                <div className="mt-8 pt-6 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-gray-500 border-t border-gray-800">
+                    <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6 order-1 md:order-2">
                         <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
                         <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
                         <Link to="/cookie-policy" className="hover:text-white transition-colors">Cookie Policy</Link>
+                    </div>
+                    <p className="order-2 md:order-1 text-center md:text-left">© {new Date().getFullYear()} Stefto. All Rights Reserved.</p>
+                    <div className="w-full md:w-auto flex justify-end order-3">
                         <button
                             onClick={scrollToTop}
-                            className="bg-stefto-red p-3 rounded-full hover:bg-stefto-blue transition-colors shadow-lg ml-2"
+                            className="bg-stefto-red p-3 rounded-xl hover:bg-stefto-blue transition-all duration-300 shadow-xl hover:-translate-y-1 group"
                             title="Back to Top"
                         >
-                            <ChevronUp size={24} color="white" />
+                            <ChevronUp size={24} color="white" className="group-hover:scale-110 transition-transform" />
                         </button>
                     </div>
                 </div>

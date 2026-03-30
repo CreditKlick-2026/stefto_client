@@ -52,25 +52,16 @@ const CreditKlickPage = () => {
     };
 
     return (
-        <main className="font-roboto overflow-x-hidden bg-[#EFF4FB]">
+        <main className="font-sans overflow-x-hidden bg-white">
             {/* Section 1: Ultra-Professional Dark Hero */}
             <section className="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden bg-[#020617]">
                 {/* --- Advanced Background Architecture --- */}
                 <div className="absolute inset-0 z-0">
-                    {/* Grid Pattern */}
-                    <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]"></div>
+                    <div className="absolute inset-0 bg-stefto-blue/40 mix-blend-multiply"></div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#020617] via-[#020617]/90 to-transparent"></div>
                     {/* Gradient Orbs */}
                     <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-blue-600/10 rounded-full blur-[120px]"></div>
                     <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-red-600/5 rounded-full blur-[100px]"></div>
-                    {/* Abstract Data Lines */}
-                    <svg className="absolute inset-0 w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="0.5" />
-                            </pattern>
-                        </defs>
-                        <rect width="100%" height="100%" fill="url(#grid)" />
-                    </svg>
                 </div>
 
                 <div className="container mx-auto px-4 md:px-8 relative z-10">
@@ -114,7 +105,7 @@ const CreditKlickPage = () => {
                                     </div>
                                     <div className="text-sm">
                                         <div className="font-bold text-white">5,00,000+</div>
-                                        <div className="text-xs">Profiles Analyzed</div>
+                                        <div className="text-xs text-gray-400">Profiles Analyzed</div>
                                     </div>
                                 </div>
                             </div>
@@ -154,21 +145,6 @@ const CreditKlickPage = () => {
                                     ))}
                                 </div>
                             </div>
-
-                            {/* Floating Insight Card */}
-                            <motion.div
-                                animate={{ y: [0, -20, 0] }}
-                                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                                className="absolute -bottom-10 -left-10 bg-white p-6 rounded-3xl shadow-2xl max-w-[240px]"
-                            >
-                                <div className="flex items-center gap-4 mb-3">
-                                    <div className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600">
-                                        <ShieldCheck size={20} />
-                                    </div>
-                                    <div className="text-xs font-black text-stefto-blue uppercase tracking-tighter">System Status</div>
-                                </div>
-                                <p className="text-sm font-medium text-gray-500 leading-tight">All credit monitoring nodes operating at peak efficiency.</p>
-                            </motion.div>
                         </motion.div>
                     </div>
                 </div>
@@ -280,7 +256,7 @@ const CreditKlickPage = () => {
             </section>
 
             {/* Section 4: Enterprise Solutions Spotlight */}
-            <section className="py-16 bg-[#EFF4FB]">
+            <section className="py-16 bg-white">
                 <div className="container mx-auto">
                     <motion.div
                         initial={{ opacity: 0, y: 40 }}
@@ -311,7 +287,7 @@ const CreditKlickPage = () => {
                             </motion.div>
 
                             {/* --- FLOATING APP INTERFACE ELEMENTS (Matching the User's Image) --- */}
-
+                            
                             {/* Top Score Card (Score 823 as per image) */}
                             <motion.div
                                 animate={{ y: [0, -15, 0] }}
@@ -324,6 +300,8 @@ const CreditKlickPage = () => {
                                     <div className="w-[85%] h-full bg-gradient-to-r from-yellow-400 to-green-500"></div>
                                 </div>
                             </motion.div>
+
+                            {/* Home Loan / EMI Card */}
 
                             {/* Home Loan / EMI Card */}
                             <motion.div
@@ -388,7 +366,7 @@ const CreditKlickPage = () => {
 
 
             {/* Section 6: Intelligence Hub (FAQ) */}
-            <section className="pb-20 pt-4 px-4 md:px-8 bg-[#EFF4FB]">
+            <section className="pb-20 pt-4 px-4 md:px-8 bg-white">
                 <div className="container mx-auto max-w-4xl">
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}

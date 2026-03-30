@@ -14,7 +14,8 @@ export default {
                 }
             },
             fontFamily: {
-                sans: ['Roboto', 'Open Sans', 'sans-serif'],
+                sans: ['Inter', 'sans-serif'],
+                heading: ['"Plus Jakarta Sans"', 'sans-serif'],
             }
         },
     },

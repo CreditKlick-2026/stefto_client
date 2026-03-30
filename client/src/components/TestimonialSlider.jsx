@@ -98,27 +98,32 @@ const TestimonialSlider = () => {
                             transition={{ duration: 0.5, delay: (index % 3) * 0.1 }}
                             viewport={{ once: true }}
                             key={index} 
-                            className="flex-shrink-0 w-[320px] md:w-[400px] mx-4 group/card"
+                            className="flex-shrink-0 w-[280px] sm:w-[320px] md:w-[420px] mx-3 md:mx-5 group/card"
                         >
-                            <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 relative h-full flex flex-col justify-between transform transition-transform duration-500 hover:-translate-y-2 hover:shadow-xl hover:border-stefto-blue/20">
+                            <div className="bg-white/80 backdrop-blur-3xl p-5 md:p-8 rounded-3xl shadow-sm border border-gray-100/50 relative h-full flex flex-col justify-between transform transition-all duration-500 hover:-translate-y-1 hover:shadow-lg hover:border-stefto-blue/20 whitespace-normal">
                                 {/* Quote Icon Decorative */}
-                                <div className="absolute top-6 right-6 text-gray-100 opacity-50 group-hover/card:text-stefto-blue/10 transition-colors duration-500">
+                                <div className="absolute top-5 right-5 text-gray-200 opacity-60 group-hover/card:text-stefto-red/20 group-hover/card:scale-110 group-hover/card:-rotate-6 transition-all duration-500">
                                     <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
                                         <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                                     </svg>
                                 </div>
 
                                 <div>
-                                    <p className="text-gray-600 italic mb-4 whitespace-normal text-base leading-relaxed relative z-10">"{t.text}"</p>
-                                    <div className="flex gap-1 mb-2">
+                                    <div className="flex gap-1 mb-3 md:mb-4">
                                         {[...Array(5)].map((_, i) => (
-                                            <Star key={i} size={16} className="fill-yellow-400 text-yellow-400" />
+                                            <Star key={i} size={14} className="fill-yellow-400 text-yellow-500 drop-shadow-sm" />
                                         ))}
                                     </div>
+                                    <p className="text-gray-600 text-sm md:text-base leading-relaxed relative z-10 font-medium tracking-wide">"{t.text}"</p>
                                 </div>
-                                <div className="border-t border-gray-100 pt-6 mt-auto">
-                                    <h4 className="font-extrabold text-xl text-stefto-blue mb-1 uppercase tracking-wider">{t.name}</h4>
-                                    <p className="text-sm text-stefto-red font-bold tracking-wide">{t.company}</p>
+                                <div className="border-t border-gray-100 pt-4 md:pt-5 mt-5 md:mt-6 flex items-center gap-4 relative z-10">
+                                    <div className="w-10 h-10 md:w-12 md:h-12 flex-shrink-0 rounded-full bg-gradient-to-br from-stefto-blue to-stefto-dark flex items-center justify-center text-white font-extrabold text-sm md:text-base shadow-lg group-hover/card:shadow-stefto-blue/40 group-hover/card:scale-110 transition-all duration-300">
+                                        {t.name.replace(/^(Mr\.|Mrs\.)\s*/i, '').charAt(0)}
+                                    </div>
+                                    <div>
+                                        <h4 className="font-extrabold text-base md:text-lg text-stefto-dark mb-0.5 tracking-tight group-hover/card:text-stefto-blue transition-colors duration-300">{t.name}</h4>
+                                        <p className="text-[10px] md:text-xs text-stefto-red font-black tracking-widest uppercase">{t.company}</p>
+                                    </div>
                                 </div>
                             </div>
                         </motion.div>

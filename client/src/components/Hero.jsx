@@ -18,9 +18,9 @@ const Hero = ({ title, subtitle, bgImage, ctaText, ctaLink, height = "h-[70vh]" 
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="max-w-4xl"
+                    className="max-w-4xl -mt-16 md:mt-0"
                 >
-                    <h1 className="text-4xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
+                    <h1 className="text-3xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
                         {title}
                     </h1>
                     <p className="text-xl text-gray-200 mb-8 leading-relaxed">
