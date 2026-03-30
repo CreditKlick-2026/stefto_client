@@ -93,33 +93,33 @@ const Home = () => {
                         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-stefto-red/5 rounded-full blur-3xl -z-10"></div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 relative z-10">
-                            <div className="p-6 md:p-8 bg-white rounded-3xl shadow-xl border-l-[12px] border-stefto-red transform hover:-translate-y-2 transition-transform duration-300">
+                            <div className="p-6 md:p-8 bg-white rounded-2xl shadow-lg border-l-4 border-stefto-red hover:-translate-y-1 transition-transform duration-300">
                                 <p className="text-4xl font-black text-stefto-blue">98%</p>
                                 <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mt-2">Compliance Score</p>
-                                <p className="text-[10px] text-gray-400 mt-4 leading-tight">Adhering to strict RBI and industry guidelines for every interaction.</p>
+                                <p className="text-[10px] text-gray-400 mt-4 leading-tight">Adhering to strict RBI and industry guidelines.</p>
                             </div>
 
-                            <div className="p-6 md:p-8 bg-stefto-blue rounded-3xl shadow-xl text-white transform sm:translate-y-8 hover:-translate-y-2 transition-transform duration-300">
+                            <div className="p-6 md:p-8 bg-stefto-blue rounded-2xl shadow-lg text-white hover:-translate-y-1 transition-transform duration-300">
                                 <Zap className="text-stefto-red mb-4" size={32} />
                                 <p className="text-2xl font-bold">AI V5.0</p>
                                 <p className="text-[10px] font-bold text-blue-200 uppercase tracking-widest mt-1">Tech Stack</p>
-                                <p className="text-xs text-blue-100 mt-4 leading-tight">Advanced proprietary algorithms optimized for 2026 debt trends.</p>
+                                <p className="text-xs text-blue-100 mt-4 leading-tight">Advanced proprietary algorithms.</p>
                             </div>
 
-                            <div className="p-6 md:p-8 bg-gray-900 rounded-3xl shadow-xl text-white hover:-translate-y-2 transition-transform duration-300">
+                            <div className="p-6 md:p-8 bg-gray-900 rounded-2xl shadow-lg text-white hover:-translate-y-1 transition-transform duration-300">
                                 <div className="flex gap-2 mb-4">
                                     <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
                                     <span className="text-[10px] font-bold uppercase tracking-tighter">Live Support</span>
                                 </div>
                                 <p className="text-2xl font-bold">24/7</p>
-                                <p className="text-xs text-gray-400 mt-2">Operational availability across all time zones in India.</p>
+                                <p className="text-xs text-gray-400 mt-2">Operational availability across India.</p>
                             </div>
 
-                            <div className="p-6 md:p-8 bg-white rounded-3xl shadow-xl border-t-8 border-stefto-blue transform sm:translate-y-8 hover:-translate-y-2 transition-transform duration-300">
+                            <div className="p-6 md:p-8 bg-white rounded-2xl shadow-lg border-t-4 border-stefto-blue hover:-translate-y-1 transition-transform duration-300">
                                 <Globe className="text-stefto-red mb-4" size={32} />
                                 <p className="text-2xl font-bold">8+</p>
                                 <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mt-1">Centers</p>
-                                <p className="text-xs text-gray-500 mt-4 leading-tight">Strategic PAN-India presence ensuring local recovery expertise.</p>
+                                <p className="text-xs text-gray-500 mt-4 leading-tight">Strategic PAN-India presence.</p>
                             </div>
                         </div>
                     </motion.div>
@@ -198,54 +198,44 @@ const Home = () => {
                         {
                             title: "Predictive Analytics",
                             desc: "Using historical data to predict debtor behavior and payment probability.",
-                            color: "from-blue-600 to-blue-400"
+                            color: "border-blue-500"
                         },
                         {
                             title: "Digital Outreach",
                             desc: "Automated Omni-channel communication across VoiceBots, SMS, WhatsApp, and ChatBots.",
-                            color: "from-stefto-red to-orange-500"
+                            color: "border-stefto-red"
                         },
                         {
                             title: "Legal Compliance",
                             desc: "Automated legal processing and tracking for high-value recoveries.",
-                            color: "from-stefto-dark to-slate-600"
+                            color: "border-stefto-dark"
                         }
                     ].map((s, i) => (
                         <motion.div
                             key={i}
-                            initial={{ opacity: 0, scale: 0.8, y: 60, rotateX: 10, rotateY: -10 }}
-                            whileInView={{ opacity: 1, scale: 1, y: 0, rotateX: 10, rotateY: -10 }}
-                            transition={{ duration: 0.8, delay: i * 0.2, ease: "easeOut" }}
+                            initial={{ opacity: 0, y: 10, rotateX: 0, rotateY: 0, rotate: 0 }}
+                            whileInView={{ opacity: 1, y: 0, rotateX: 0, rotateY: 0, rotate: 0 }}
+                            transition={{ duration: 0.4, delay: i * 0.1 }}
                             viewport={{ once: true }}
-                            whileHover={{
-                                scale: 1.05,
-                                rotateX: 5,
-                                rotateY: -5,
-                                y: -15,
-                                transition: { duration: 0.3 }
-                            }}
-                            style={{ transformStyle: "preserve-3d", perspective: 1200 }}
-                            className="bg-white p-8 md:p-12 rounded-[2rem] shadow-[25px_25px_50px_-10px_rgba(0,0,0,0.12)] border-b-[12px] border-r-[6px] border-gray-100 transition-all duration-300 relative group overflow-hidden"
+                            style={{ transformStyle: "flat", perspective: "none" }}
+                            className={`bg-white p-8 md:p-10 rounded-xl shadow-md border-t-4 ${s.color} border-l border-r border-b border-gray-100 hover:shadow-lg transition-shadow duration-300 flex flex-col items-center text-center`}
                         >
-                            {/* Static Depth Decoration */}
-                            <div className={`absolute top-0 left-0 w-full h-2 bg-gradient-to-r ${s.color} opacity-20`}></div>
-
-                            {/* Floating Geometric Ornaments - Enhanced */}
-                            <div className="absolute -top-6 -right-6 w-32 h-32 bg-gray-50 rounded-full group-hover:scale-150 group-hover:bg-blue-50 transition-all duration-700 pointer-events-none"></div>
-
-                            {/* Content - 3D Typography Slab */}
-                            <div className="relative z-10 pt-2 transform-gpu translate-z-20">
-                                <h3 className="text-2xl md:text-3xl font-black mb-5 tracking-tight text-stefto-blue font-jakarta drop-shadow-md">
-                                    {s.title}
-                                </h3>
-                                <p className="text-gray-500 text-base md:text-lg leading-relaxed font-bold mb-10 opacity-80">
-                                    {s.desc}
-                                </p>
+                            {/* Icons (Simple) */}
+                            <div className="w-10 h-10 bg-gray-50 rounded-lg flex items-center justify-center mb-6">
+                                <Zap size={18} className="text-stefto-blue" />
                             </div>
 
-                            {/* Dynamic Animation Footer */}
-                            <div className="relative z-10 flex items-center mt-auto">
-                                <div className={`h-2 w-16 rounded-full bg-gradient-to-r ${s.color} opacity-40 group-hover:w-full group-hover:opacity-100 transition-all duration-700 shadow-[0_5px_15px_rgba(37,99,235,0.3)]`}></div>
+                            {/* Content */}
+                            <h3 className="text-xl md:text-2xl font-bold mb-4 text-stefto-blue">
+                                {s.title}
+                            </h3>
+                            <p className="text-gray-500 text-sm md:text-base leading-relaxed mb-6">
+                                {s.desc}
+                            </p>
+
+                            {/* Simple Action */}
+                            <div className="mt-auto flex items-center gap-2 text-stefto-red font-bold text-xs uppercase tracking-widest cursor-pointer hover:gap-3 transition-all">
+                                Read More <ArrowRight size={14} />
                             </div>
                         </motion.div>
                     ))}
